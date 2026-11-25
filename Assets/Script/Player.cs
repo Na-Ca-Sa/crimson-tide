@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
-public class Controiler : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -30,22 +30,6 @@ public class Controiler : MonoBehaviour
 
         rb.linearVelocity = new Vector2(moveInputX * moveSpeed, moveInputY * moveSpeed);
 
-        if (moveInputX > 0)
-        {
-            this.transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (moveInputX < 0)
-        {
-            this.transform.localScale = new Vector3(-1, 1, 1);
-        }
-        if (moveInputY > 0)
-        {
-            this.transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (moveInputY < 0)
-        {
-            this.transform.localScale = new Vector3(1, -1, 1);
-        }
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
